@@ -14,6 +14,17 @@ import pandas
 # import keras
 
 
+def sign_binance(key_api_public, key_api_secret, querystring):
+    signature = hmac.new(
+        key_api_secret.encode('utf-8'),
+        querystring.encode('utf-8'),
+        hashlib.sha256,
+    ).hexdigest()
+    return signature
+
+def get_exchange_balance(exchange, key_api_public, key_api_secret):
+    return
+
 
 def get_pair_trade_history(exchange, key_api_public, key_api_secret, coin_base, coin_quote):
     if exchange == 'binance':
@@ -28,11 +39,7 @@ def get_pair_trade_history(exchange, key_api_public, key_api_secret, coin_base, 
         # 'fromId': 1, <- binance entry id
         }
         querystring = urllib.parse.urlencode(payload)
-        signature = hmac.new(
-            key_api_secret.encode('utf-8'),
-            querystring.encode('utf-8'),
-            hashlib.sha256,
-        ).hexdigest()
+        signature = sign_binance(key_api_public, key_api_secret, querystring)
 
         payload['signature'] = signature
         r = requests.get(url, headers=headers, params=payload)
