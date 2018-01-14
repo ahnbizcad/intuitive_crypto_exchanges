@@ -38,9 +38,9 @@ def get_pair_trade_history(exchange, key_api_public, key_api_secret, coin_base, 
 
         timestamp = int(time.time()*1000)
         payload = {
-        'timestamp':timestamp,
-        'symbol': coin_base + coin_quote,
-        # 'fromId': 1, <- binance entry id
+            'timestamp':timestamp,
+            'symbol': coin_base + coin_quote,
+            # 'fromId': 1, <- binance entry id
         }
         querystring = urllib.parse.urlencode(payload)
         signature = sign_binance(key_api_secret, querystring)
