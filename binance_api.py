@@ -13,7 +13,9 @@ import numpy
 import pandas
 # import keras
 
-def get_trade_history(exchange, key_api_public, key_api_secret, coin_base, coin_quote):
+
+
+def get_pair_trade_history(exchange, key_api_public, key_api_secret, coin_base, coin_quote):
     if exchange == 'binance':
         url = 'https://api.binance.com/api/v3/myTrades'
 
