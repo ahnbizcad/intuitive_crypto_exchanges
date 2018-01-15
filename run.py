@@ -23,8 +23,7 @@ with open(".credentials.yaml", 'r') as credentials_yaml_file:
     key_api_secret_binance = credentials_dict['exchanges']['binance']['secret']
 
 
-# result = binance_api.get_pair_trade_history('binance', key_api_public_binance, key_api_secret_binance,
-    'XVG', 'BTC')
+# result = binance_api.get_pair_trade_history('binance', key_api_public_binance, key_api_secret_binance, 'XVG', 'BTC')
 
 # result = binance_api.get_exchange_balances('binance', key_api_public_binance, key_api_secret_binance)
 
