@@ -19,9 +19,13 @@ import binance_api
 with open(".credentials.yaml", 'r') as credentials_yaml_file:
     credentials_dict = yaml.load(credentials_yaml_file)
 
-    key_api_binance_public = credentials_dict['exchanges']['binance']['public']
-    key_api_binance_secret = credentials_dict['exchanges']['binance']['secret']
+    key_api_public_binance = credentials_dict['exchanges']['binance']['public']
+    key_api_secret_binance = credentials_dict['exchanges']['binance']['secret']
 
 
-text = binance_api.get_pair_trade_history('binance', key_api_binance_public, key_api_binance_secret, 'LTC', 'BTC')
-print(text)
+# result = binance_api.get_pair_trade_history('binance', key_api_public_binance, key_api_secret_binance,
+    'XVG', 'BTC')
+
+# result = binance_api.get_exchange_balances('binance', key_api_public_binance, key_api_secret_binance)
+
+# print(result)
